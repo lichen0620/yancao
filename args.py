@@ -23,6 +23,7 @@ def gat_lstm_args_parser():
     parser.add_argument('--step_size', type=int, default=10, help='step size')
     parser.add_argument('--gamma', type=float, default=0.5, help='gamma')
     parser.add_argument('--model_version', type=int, default=0, help='model_version')
+    parser.add_argument('--lamda', type=float, default=1, help='ratio of lossL1')
 
     args = parser.parse_args()
 

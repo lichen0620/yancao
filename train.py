@@ -140,7 +140,7 @@ def train(args, train_data, val):
             #print('epoch={} | loss={} '.format(epoch, train_loss))
         
     state = {'model': model.state_dict()}
-    torch.save(state, 'models/' + 'seq_len{}_hidden_size{}_model{}'.format(args.seq_len,args.hidden_size,args.model_version) + '.pkl')
+    torch.save(state, 'models/' + 'seq_len{}_hidden_size{}lamda{}model{}'.format(args.seq_len,args.hidden_size,args.lamda,args.model_version) + '.pkl')
     
 
 args = gat_lstm_args_parser()

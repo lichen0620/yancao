@@ -52,7 +52,7 @@ def test(args, test_data, scaler):
     #graph_struct = []
     print('loading models...')
     model = GAT_LSTM(args).to(args.device)
-    model_name = 'seq_len16hidden_size128output1model0'
+    model_name = 'seq_len32hidden_size128lamda1num_layers2'
     model.load_state_dict(torch.load('models/'+model_name+'.pkl')['model'])
     model.eval()
     print('predicting...')

@@ -43,8 +43,11 @@ for i in range(len(node_feas)):
 data = torch.tensor(np.array(node_feas)).float()
 data = list(map(list, zip(*node_feas)))
 
-edge_index = torch.tensor([[1, 1, 1, 3, 3],
-        [0, 2, 3, 0, 2]])    #全连接
+# edge_index = torch.tensor([[1, 1, 1, 3, 3],
+#         [0, 2, 3, 0, 2]])    #全连接
+
+edge_index = torch.tensor([[0, 1, 1, 3, 3],
+        [2, 0, 3, 0, 2]])    #全连接
 
 edge_index = torch.LongTensor(edge_index)                 
 

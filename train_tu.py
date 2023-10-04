@@ -75,7 +75,7 @@ def train(args, train_data, val):
             #print(preds.shape)
             #print(labels)
             #print(labels.shape)
-            total_loss = loss_function_1(preds, labels)+loss_function_2(preds, labels)
+            total_loss = loss_function_1(preds, labels)+args.lamda*loss_function_2(preds, labels)
             epoch_loss = epoch_loss + total_loss
             optimizer.zero_grad()
             total_loss.backward()
@@ -140,7 +140,7 @@ def train(args, train_data, val):
             #print('epoch={} | loss={} '.format(epoch, train_loss))
         
     state = {'model': model.state_dict()}
-    torch.save(state, 'models/' + 'seq_len{}hidden_size{}output{}model{}'.format(args.seq_len,args.hidden_size,args.output_size,args.model_version) + '.pkl')
+    torch.save(state, 'models/' + 'seq_len{}hidden_size{}lamda{}num_layers{}'.format(args.seq_len,args.hidden_size,args.lamda,args.num_layers) + '.pkl')
     
 
 args = gat_lstm_args_parser()
