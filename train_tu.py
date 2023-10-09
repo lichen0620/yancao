@@ -12,7 +12,7 @@ from tqdm import tqdm
 from models_tu import GAT_LSTM
 from args import gat_lstm_args_parser
 #from get_data_GSL import setup_seed, train_data, Val, node_feas
-from get_data_yc import setup_seed, train_data, Val, node_feas
+from get_data import setup_seed, train_data, Val, node_feas
 #from get_data import setup_seed, train_data, Val, node_feas
 
 

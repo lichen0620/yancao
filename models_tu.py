@@ -63,7 +63,7 @@ class GAT_LSTM(nn.Module):
         self.num_nodes = args.input_size
         self.out_feats = 32
         self.embedding_dim = 100
-        self.dim_fc = 79712  #####################
+        self.dim_fc = 278416  #####################
 
         self.conv1 = torch.nn.Conv1d(1, 8, 10, stride=1)  # .to(device)
         self.conv2 = torch.nn.Conv1d(8, 16, 10, stride=1)  # .to(device)
