@@ -18,7 +18,7 @@ def gat_lstm_args_parser():
     parser.add_argument('--lr', type=float, default=0.01, help='learning rate')
     parser.add_argument('--batch_size', type=int, default=256, help='batch size')
     parser.add_argument('--optimizer', type=str, default='adam', help='type of optimizer')
-    parser.add_argument('--device', default=torch.device("cuda:1" if torch.cuda.is_available() else "cpu"))
+    parser.add_argument('--device', default=torch.device("cuda:0" if torch.cuda.is_available() else "cpu"))
     parser.add_argument('--weight_decay', type=float, default=1e-4, help='weight decay')
     parser.add_argument('--step_size', type=int, default=10, help='step size')
     parser.add_argument('--gamma', type=float, default=0.5, help='gamma')

@@ -168,6 +168,7 @@ class GAT_LSTM(nn.Module):
         preds = []
         #print(self.fcs)     # 四个sequential
         for fc in self.fcs:
+            a = fc(x)
             preds.append(fc(x))
         #print(preds)       # 一个列表，有四个元素，四个(batchsize , 1)
         pred = torch.stack(preds, dim=0)

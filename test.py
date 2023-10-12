@@ -48,7 +48,7 @@ def get_rmse(y, pred):
 
 @torch.no_grad()
 def test(args, test_data, scaler):
-    
+    print(torch.cuda.current_device())
     #graph_struct = []
     print('loading models...')
     model = GAT_LSTM(args).to(args.device)
@@ -77,6 +77,7 @@ def test(args, test_data, scaler):
             preds[i].extend(pred)
     
     ys, preds = np.array(ys), np.array(preds)
+
     print(ys.shape)
     print(preds.shape)
     # with open('/home/laicx/GSL_GAT_LSTM_ing_two/txt/B18_pred.txt','w') as f:
@@ -103,6 +104,7 @@ def test(args, test_data, scaler):
 
         print('--------------------------------')
         pred = pred[0:100]
+        # pred = (pred-0.795)*3.1+0.795
         y = y[0:100]
         plot(y, pred, ind + 1,  model_name,label='*')
 
